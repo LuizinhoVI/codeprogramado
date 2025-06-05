@@ -13,6 +13,13 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+
+
+@media  (max-width: 900px) {
+  .sumir{
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -71,12 +78,52 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  <div id="navDemo" class="w3-bar-block  w3-hide w3-hide-large w3-hide-medium w3-large" style="background-color: #212163;">
+    <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a> -->
+
+ 
+
+
+
+ 
+
+
+  <div class="w3-bar-item w3-button w3-text-white" onclick="myAccFunc()">
+  Formatação <i class="fa fa-caret-down"></i></div>
+  <div id="demoAcc" class="w3-hide w3-white w3-card-4">
+     <a href="#" class="w3-bar-item w3-button " onclick="mostrar(this)">Criar BOOT</a>
+     <a href="#" class="w3-bar-item w3-button" onclick="mostrar(this)">Baixar Sistema Operacional</a>
+     <a href="#" class="w3-bar-item w3-button" onclick="mostrar(this)">Baixar OFFICE</a>
+     <a href="#" class="w3-bar-item w3-button" onclick="mostrar(this)">Ativadores</a>
   </div>
+
+  <div class="w3-bar-item w3-button w3-text-white" onclick="myAccFunc1()">
+  Drivers <i class="fa fa-caret-down"></i></div>
+  <div id="demoAcc1" class="w3-hide w3-white w3-card-4">
+     <a href="#" class="w3-bar-item w3-button" onclick="mostrar(this)">Impressoras</a>
+     <!-- <a href="#" class="w3-bar-item w3-button">Placa de video </a> -->
+     <a href="#" class="w3-bar-item w3-button" onclick="mostrar(this)">Wifi</a>
+  </div>
+
+  <div class="w3-bar-item w3-button w3-text-white" onclick="myAccFunc2()">
+  Audio Visual <i class="fa fa-caret-down"></i></div>
+  <div id="demoAcc2" class="w3-hide w3-white w3-card-4">
+     <a href="#" class="w3-bar-item w3-button" onclick="mostrar(this)">Editor de Foto</a>
+     <a href="#" class="w3-bar-item w3-button " onclick="mostrar(this)">Editor de video</a>
+  </div>
+
+  <div class="w3-bar-item w3-button w3-text-white" onclick="myAccFunc3()">
+  Resets <i class="fa fa-caret-down"></i></div>
+  <div id="demoAcc3" class="w3-hide w3-white w3-card-4">
+     <a href="#" class="w3-bar-item w3-button" onclick="mostrar(this)">Impressora</a>
+  </div>
+
+  <a href="#" class="w3-bar-item w3-button w3-text-white " onclick="mostrar(this)">Suporte</a>
+  </div>
+
+
+ 
+
 </div>
 
 <section class="inicio" style="display:  ;">
@@ -85,10 +132,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container  w3-center" style="padding:128px 16px ;background-color: #212163">
   <h1 class="w3-margin w3-jumbo " style="color: #fe6544;"><b> CODE</b> </h1>
   <h2 class="w3-text-white ">PROGRAMADO</h2>
-  <button class="w3-button w3-text-white w3-deep-orange w3-padding-large w3-large w3-margin-top">CONVERSAR VIA WHATSAPP</button>
-  <img src="foto/Design sem nome (1).png" width="400px" style="position: absolute; top: 20vh ; right: 0vw; " alt="">
-  <img src="foto/Design sem nome.png" width="200px" style="position: absolute; top: 50vh ; right: 10vw; " alt="">
-  <img src="foto/notebook.png" width="400px" style="position: absolute; top: 30vh ; left: 0vw;" alt="">
+  <a class="w3-button w3-text-white w3-deep-orange w3-padding-large w3-large w3-margin-top" href="https://api.whatsapp.com/send?phone=5579996362900&text=ol%C3%A1" target="_blank">CONVERSAR VIA WHATSAPP</a>
+  <img src="foto/Design sem nome (1).png" class="sumir" width="400px" style="position: absolute; top: 20vh ; right: 0vw; " alt="">
+  <img src="foto/Design sem nome.png" class="sumir" width="200px" style="position: absolute; top: 50vh ; right: 10vw; " alt="">
+  <img src="foto/notebook.png" width="400px" class="sumir" style="position: absolute; top: 30vh ; left: 0vw;" alt="">
 </header>
 
 <!-- First Grid -->
@@ -608,6 +655,53 @@ boot.style.display = "block";
 }
 
 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myAccFunc1() {
+  var x = document.getElementById("demoAcc1");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green1";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myAccFunc2() {
+  var x = document.getElementById("demoAcc2");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myAccFunc3() {
+  var x = document.getElementById("demoAcc3");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
 </script>
 
 </body>
